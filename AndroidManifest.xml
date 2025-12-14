@@ -27,7 +27,7 @@
     <application
         android:label="@string/kprofiles_title"
         android:persistent="false"
-        android:theme="@style/Theme.SubSettingsBase">
+        android:theme="@style/Theme.SubSettingsBase.Expressive">
 
         <receiver
             android:name=".BootCompletedReceiver"
@@ -41,8 +41,7 @@
         <activity
             android:name=".battery.KprofilesSettingsActivity"
             android:exported="true"
-            android:label="@string/kprofiles_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:label="@string/kprofiles_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
                 <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES"/>
