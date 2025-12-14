@@ -32,13 +32,13 @@ import android.view.ViewGroup;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceFragment;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.kprofiles.R;
 import com.android.kprofiles.utils.FileUtils;
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
-public class KprofilesSettingsFragment extends PreferenceFragment implements
+public class KprofilesSettingsFragment extends SettingsBasePreferenceFragment implements
         OnPreferenceChangeListener {
 
     private SwitchPreferenceCompat kProfilesAutoPreference;
