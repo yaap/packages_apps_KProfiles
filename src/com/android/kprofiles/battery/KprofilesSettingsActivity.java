@@ -28,7 +28,7 @@ public class KprofilesSettingsActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,
                 new KprofilesSettingsFragment(), TAG_KPROFILES).commit();
     }
 }

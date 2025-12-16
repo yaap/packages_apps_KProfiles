@@ -32,13 +32,13 @@ import android.view.ViewGroup;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.PreferenceFragment;
+import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.android.kprofiles.R;
 import com.android.kprofiles.utils.FileUtils;
 
-public class KprofilesSettingsFragment extends PreferenceFragment implements
+public class KprofilesSettingsFragment extends PreferenceFragmentCompat implements
         OnPreferenceChangeListener {
 
     private SwitchPreferenceCompat kProfilesAutoPreference;
@@ -58,7 +58,7 @@ public class KprofilesSettingsFragment extends PreferenceFragment implements
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.kprofiles_settings);
+        setPreferencesFromResource(R.xml.kprofiles_settings, rootKey);
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
