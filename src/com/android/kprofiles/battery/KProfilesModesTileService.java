@@ -22,7 +22,7 @@ import com.android.kprofiles.utils.FileUtils;
 public class KProfilesModesTileService extends TileService {
 
     private Context mContext;
-    private boolean mSelfChange = false;
+    private volatile boolean mSelfChange = false;
 
     @Override
     public void onCreate() {
@@ -105,7 +105,7 @@ public class KProfilesModesTileService extends TileService {
 
     private String getMode() {
         final String value = FileUtils.readOneLine(KPROFILES_MODES_NODE);
-        return value != null ? value : "0";
+        return value != null ? value.trim() : "0";
     }
 
     private void updateTileContent() {
@@ -116,7 +116,7 @@ public class KProfilesModesTileService extends TileService {
         Tile tile = getQsTile();
         if (mode == null) mode = getMode();
 
-        tile.setState(mode != "0" ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        tile.setState(!"0".equals(mode) ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
         switch (mode) {
             case "0":
                 tile.setContentDescription(getResources().getString(R.string.kprofiles_modes_none));
