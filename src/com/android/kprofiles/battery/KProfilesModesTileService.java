@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Icon;
 import android.os.UserHandle;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
@@ -121,18 +122,22 @@ public class KProfilesModesTileService extends TileService {
             case "0":
                 tile.setContentDescription(getResources().getString(R.string.kprofiles_modes_none));
                 tile.setSubtitle(getResources().getString(R.string.kprofiles_modes_none));
+                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_kprofiles));
                 break;
             case "1":
                 tile.setContentDescription(getResources().getString(R.string.kprofiles_modes_battery));
                 tile.setSubtitle(getResources().getString(R.string.kprofiles_modes_battery));
+                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_leaf));
                 break;
             case "2":
                 tile.setContentDescription(getResources().getString(R.string.kprofiles_modes_balanced));
                 tile.setSubtitle(getResources().getString(R.string.kprofiles_modes_balanced));
+                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_balance));
                 break;
             case "3":
                 tile.setContentDescription(getResources().getString(R.string.kprofiles_modes_performance));
                 tile.setSubtitle(getResources().getString(R.string.kprofiles_modes_performance));
+                tile.setIcon(Icon.createWithResource(this, R.drawable.ic_rocket));
                 break;
         }
         tile.updateTile();
